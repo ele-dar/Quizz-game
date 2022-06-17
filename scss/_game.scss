@@ -1,0 +1,86 @@
+.game.wrong {
+	animation: shake $animation-duration;
+}
+
+.info {
+	width: 100%;
+	text-align: center;
+	font-size: 2em;
+	@include center-col();
+	@include responsive-sm() {
+		width: 80%;
+	}
+}
+
+.display {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	padding: 10px;
+	display: flex;
+	justify-content: space-between;
+	font-family: 'Rubik Moonrocks', cursive;
+	&__score {
+		&::after {
+			content: '+1';
+			color: $my-blue;
+			margin-left: 10px;
+			transition: opacity $animation-duration ease;
+			opacity: 0;
+		}
+		&.correct::after {
+			opacity: 1;
+		}
+	}
+}
+
+#question {
+	width: 70%;
+	@include responsive-sm() {
+		width: 90%;
+	}
+}
+
+#true {
+	background-color: $my-green;
+}
+
+#false {
+	background-color: $my-red;
+}
+
+@keyframes shake {
+	0% {
+		transform: translate(1px, 1px) rotate(0deg);
+	}
+	10% {
+		transform: translate(-1px, -2px) rotate(-1deg);
+	}
+	20% {
+		transform: translate(-3px, 0px) rotate(1deg);
+	}
+	30% {
+		transform: translate(3px, 2px) rotate(0deg);
+	}
+	40% {
+		transform: translate(1px, -1px) rotate(1deg);
+	}
+	50% {
+		transform: translate(-1px, 2px) rotate(-1deg);
+	}
+	60% {
+		transform: translate(-3px, 1px) rotate(0deg);
+	}
+	70% {
+		transform: translate(3px, 1px) rotate(-1deg);
+	}
+	80% {
+		transform: translate(-1px, -1px) rotate(1deg);
+	}
+	90% {
+		transform: translate(1px, 2px) rotate(0deg);
+	}
+	100% {
+		transform: translate(1px, -2px) rotate(-1deg);
+	}
+}

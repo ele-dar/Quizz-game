@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <title>Quizz</title>
+</head>
+
+<body>
+    <section class="intro hidden">
+        <h1 class="header">QUIZZ GAME</h1>
+        <button class="play" id="play">PLAY</button>
+    </section>
+
+    <section class="level hidden">
+        <h1 class="header">Choose difficulty</h1>
+        <div class="choose choose-level">
+            <button id="easy">easy</button>
+            <button id="medium">medium</button>
+            <button id="hard">hard</button>
+        </div>
+    </section>
+
+    <section class="loader hidden">
+        <div class="triple-spinner"></div>
+    </section>
+
+    <section class="game hidden">
+        <div class="info">
+            <div class="display">
+                <p class="display__score">Score: 0</p>
+                <p class="display__question-num">1/10</p>
+            </div>
+            <h1 id="question">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae, repellat.</h1>
+        </div>
+        <div class="choose">
+            <button id="true">True</button>
+            <button id="false">False</button>
+        </div>
+    </section>
+
+    <section class="gameover">
+        <h1 class="header">GAME OVER</h1>
+        <div class="gameover__info">
+            <div class="gameover__score">
+                <p>Your score is</p>
+                <p id="final-score-display">...</p>
+            </div>
+            <form action="" class="gameover__submit ">
+                <input type="text" id="username" class="gameover__submit__name" placeholder="Name for highscores">
+                <button class="gameover__submit__btn">Submit</button>
+            </form>
+            <div class="highscore hidden">
+                <p>Your place in highscores</p>
+                <p id="user-place">...</p>
+            </div>
+        </div>
+        <button class="play" id="play-again">PLAY AGAIN</button>
+    </section>
+
+    <script src="./script/app.js"></script>
+</body>
+
+</html>

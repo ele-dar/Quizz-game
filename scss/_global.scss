@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&family=Rubik+Moonrocks&display=swap');
+
+$my-green: #e4fac3;
+$my-red: #ffe0de;
+$my-blue: #caf5fb;
+$my-yellow: #fff6b9;
+$animation-duration: 500ms;
+
+@mixin responsive-sm() {
+	@media (max-width: 720px) {
+		@content;
+	}
+}
+
+@mixin center-col() {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+body {
+	font-family: 'Quicksand', sans-serif;
+	background-image: url(../images/7233949.jpg);
+	background-size: cover;
+	width: 100vw;
+	height: 100vh;
+	@include center-col();
+}
+
+section {
+	background-color: rgb(255, 255, 255);
+	box-shadow: 0px 0px 16px 2px rgba(0, 0, 0, 0.76);
+	width: 720px;
+	height: 500px;
+	position: relative;
+	@include center-col();
+	@include responsive-sm() {
+		width: 100vw;
+		height: 100vh;
+	}
+}
+
+.hidden {
+	display: none;
+}
+
+button {
+	border: none;
+	border-radius: 50%;
+	width: 150px;
+	height: 150px;
+	font-family: 'Rubik Moonrocks', cursive;
+	font-size: 1.8em;
+	@include responsive-sm() {
+		width: 100px;
+		height: 100px;
+		font-size: 1.2em;
+	}
+}
+
+button:hover {
+	animation: sway 1s ease-in-out forwards;
+	cursor: pointer;
+	transition: scale 0.3s ease;
+}
+
+.header {
+	font-family: 'Rubik Moonrocks', cursive;
+	font-size: 4rem;
+	text-align: center;
+	width: 60%;
+	@include responsive-sm() {
+		font-size: 3em;
+	}
+}
+
+.choose {
+	margin-top: 50px;
+	display: flex;
+	justify-content: center;
+	column-gap: 30px;
+	@include responsive-sm() {
+		column-gap: 20px;
+	}
+}
+
+@keyframes sway {
+	0% {
+		transform: scale(1) rotate(0deg);
+	}
+	33% {
+		transform: scale(1.1) rotate(30deg);
+	}
+	100% {
+		transform: scale(1.1) rotate(0deg);
+	}
+}

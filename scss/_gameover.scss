@@ -1,0 +1,75 @@
+.gameover {
+	&__info {
+		width: 60%;
+		margin-top: 30px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__score {
+		@include center-col();
+		row-gap: 10px;
+	}
+	&__submit {
+		@include center-col();
+		row-gap: 10px;
+		&__btn {
+			width: 70px;
+			height: 70px;
+			font-size: 0.9em;
+			background-color: $my-green;
+			transition: transform 500ms ease;
+		}
+		&__btn:hover {
+			animation: none;
+			transform: scale(1.5) translateY(10px);
+			transition: transform 500ms ease;
+		}
+		&__name {
+			font-family: inherit;
+			text-align: center;
+		}
+	}
+}
+
+.gameover__submit.hidden {
+	display: none;
+}
+.highscore.hidden {
+	display: none;
+}
+
+.highscore {
+	@include center-col();
+	row-gap: 10px;
+}
+
+#final-score-display,
+#user-place {
+	border: none;
+	border-radius: 50%;
+	width: 70px;
+	height: 70px;
+	font-family: 'Rubik Moonrocks', cursive;
+	font-size: 1.8em;
+	@include center-col();
+	transition: transform 500ms ease;
+}
+
+#final-score-display {
+	background-color: $my-yellow;
+}
+
+#user-place {
+	background-color: $my-red;
+}
+
+#final-score-display:hover,
+#user-place:hover {
+	transform: scale(1.5) translateY(10px);
+	transition: transform 500ms ease;
+}
+
+#play-again {
+	margin-top: 20px;
+}
