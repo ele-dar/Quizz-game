@@ -1,5 +1,3 @@
-// https://opentdb.com/api.php?amount=10&difficulty=easy&type=boolean
-
 const intro = document.querySelector('.intro');
 const playBtn = document.querySelector('#play');
 

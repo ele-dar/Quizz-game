@@ -1,2 +1,1 @@
-# Quizz-game
- 
+A Quizz game using The Open Trivia Database API
