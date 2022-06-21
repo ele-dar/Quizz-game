@@ -35,10 +35,11 @@
 }
 
 #question {
-	width: 70%;
-	@include responsive-sm() {
-		width: 90%;
-	}
+	width: 80%;
+}
+
+.choose.hidden {
+	display: none;
 }
 
 #true {
@@ -46,6 +47,44 @@
 }
 
 #false {
+	background-color: $my-red;
+}
+
+.choose-multiple {
+	margin-top: 30px;
+	@include center-col();
+	row-gap: 10px;
+}
+
+.choose-multiple button {
+	width: 500px;
+	height: auto;
+	padding: 5px;
+	border-radius: 10px;
+	font-family: inherit;
+	@include responsive-sm() {
+		width: 60vw;
+		font-size: 1.8em;
+	}
+}
+
+.choose-multiple > button:hover {
+	font-weight: 600;
+	animation: none;
+	transform: scale(1.1);
+	transition: transform $hover-duration ease, font-weight $hover-duration ease;
+}
+
+#a1 {
+	background-color: $my-green;
+}
+#a2 {
+	background-color: $my-blue;
+}
+#a3 {
+	background-color: $my-yellow;
+}
+#a4 {
 	background-color: $my-red;
 }
 

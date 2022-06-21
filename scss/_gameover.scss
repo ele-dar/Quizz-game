@@ -18,30 +18,29 @@
 			height: 70px;
 			font-size: 0.9em;
 			background-color: $my-green;
-			transition: transform 500ms ease;
+			transition: transform $hover-duration ease;
 		}
 		&__btn:hover {
 			animation: none;
 			transform: scale(1.5) translateY(10px);
-			transition: transform 500ms ease;
+			transition: transform $hover-duration ease;
 		}
 		&__name {
 			font-family: inherit;
 			text-align: center;
 		}
+		&.hidden {
+			display: none;
+		}
 	}
-}
-
-.gameover__submit.hidden {
-	display: none;
-}
-.highscore.hidden {
-	display: none;
 }
 
 .highscore {
 	@include center-col();
 	row-gap: 10px;
+	&.hidden {
+		display: none;
+	}
 }
 
 #final-score-display,
@@ -53,7 +52,7 @@
 	font-family: 'Rubik Moonrocks', cursive;
 	font-size: 1.8em;
 	@include center-col();
-	transition: transform 500ms ease;
+	transition: transform $hover-duration ease;
 }
 
 #final-score-display {
@@ -67,7 +66,6 @@
 #final-score-display:hover,
 #user-place:hover {
 	transform: scale(1.5) translateY(10px);
-	transition: transform 500ms ease;
 }
 
 #play-again {

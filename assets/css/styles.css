@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&family=Rubik+Moonrocks&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&family=Rubik+Moonrocks&display=swap");
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -206,6 +206,10 @@ button {
   height: 150px;
   font-family: 'Rubik Moonrocks', cursive;
   font-size: 1.8em;
+  -webkit-transition: -webkit-transform 300ms ease;
+  transition: -webkit-transform 300ms ease;
+  transition: transform 300ms ease;
+  transition: transform 300ms ease, -webkit-transform 300ms ease;
 }
 
 @media (max-width: 720px) {
@@ -217,11 +221,9 @@ button {
 }
 
 button:hover {
-  -webkit-animation: sway 1s ease-in-out forwards;
-          animation: sway 1s ease-in-out forwards;
+  -webkit-transform: scale(1.1) rotate(20deg);
+          transform: scale(1.1) rotate(20deg);
   cursor: pointer;
-  -webkit-transition: scale 0.3s ease;
-  transition: scale 0.3s ease;
 }
 
 .header {
@@ -256,39 +258,29 @@ button:hover {
   }
 }
 
-@-webkit-keyframes sway {
-  0% {
-    -webkit-transform: scale(1) rotate(0deg);
-            transform: scale(1) rotate(0deg);
-  }
-  33% {
-    -webkit-transform: scale(1.1) rotate(30deg);
-            transform: scale(1.1) rotate(30deg);
-  }
-  100% {
-    -webkit-transform: scale(1.1) rotate(0deg);
-            transform: scale(1.1) rotate(0deg);
-  }
-}
-
-@keyframes sway {
-  0% {
-    -webkit-transform: scale(1) rotate(0deg);
-            transform: scale(1) rotate(0deg);
-  }
-  33% {
-    -webkit-transform: scale(1.1) rotate(30deg);
-            transform: scale(1.1) rotate(30deg);
-  }
-  100% {
-    -webkit-transform: scale(1.1) rotate(0deg);
-            transform: scale(1.1) rotate(0deg);
-  }
-}
-
 .play {
   background-color: #caf5fb;
   margin-top: 50px;
+}
+
+#multiple {
+  background-color: #fff6b9;
+}
+
+#boolean {
+  background-color: #caf5fb;
+}
+
+#easy {
+  background-color: #e4fac3;
+}
+
+#medium {
+  background-color: #fff6b9;
+}
+
+#hard {
+  background-color: #ffe0de;
 }
 
 .triple-spinner {
@@ -353,18 +345,6 @@ button:hover {
   }
 }
 
-#easy {
-  background-color: #e4fac3;
-}
-
-#medium {
-  background-color: #fff6b9;
-}
-
-#hard {
-  background-color: #ffe0de;
-}
-
 .game.wrong {
   -webkit-animation: shake 500ms;
           animation: shake 500ms;
@@ -423,13 +403,11 @@ button:hover {
 }
 
 #question {
-  width: 70%;
+  width: 80%;
 }
 
-@media (max-width: 720px) {
-  #question {
-    width: 90%;
-  }
+.choose.hidden {
+  display: none;
 }
 
 #true {
@@ -437,6 +415,67 @@ button:hover {
 }
 
 #false {
+  background-color: #ffe0de;
+}
+
+.choose-multiple {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  row-gap: 10px;
+}
+
+.choose-multiple button {
+  width: 500px;
+  height: auto;
+  padding: 5px;
+  border-radius: 10px;
+  font-family: inherit;
+}
+
+@media (max-width: 720px) {
+  .choose-multiple button {
+    width: 60vw;
+    font-size: 1.8em;
+  }
+}
+
+.choose-multiple > button:hover {
+  font-weight: 600;
+  -webkit-animation: none;
+          animation: none;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: font-weight 300ms ease, -webkit-transform 300ms ease;
+  transition: font-weight 300ms ease, -webkit-transform 300ms ease;
+  transition: transform 300ms ease, font-weight 300ms ease;
+  transition: transform 300ms ease, font-weight 300ms ease, -webkit-transform 300ms ease;
+}
+
+#a1 {
+  background-color: #e4fac3;
+}
+
+#a2 {
+  background-color: #caf5fb;
+}
+
+#a3 {
+  background-color: #fff6b9;
+}
+
+#a4 {
   background-color: #ffe0de;
 }
 
@@ -587,10 +626,10 @@ button:hover {
   height: 70px;
   font-size: 0.9em;
   background-color: #e4fac3;
-  -webkit-transition: -webkit-transform 500ms ease;
-  transition: -webkit-transform 500ms ease;
-  transition: transform 500ms ease;
-  transition: transform 500ms ease, -webkit-transform 500ms ease;
+  -webkit-transition: -webkit-transform 300ms ease;
+  transition: -webkit-transform 300ms ease;
+  transition: transform 300ms ease;
+  transition: transform 300ms ease, -webkit-transform 300ms ease;
 }
 
 .gameover__submit__btn:hover {
@@ -598,10 +637,10 @@ button:hover {
           animation: none;
   -webkit-transform: scale(1.5) translateY(10px);
           transform: scale(1.5) translateY(10px);
-  -webkit-transition: -webkit-transform 500ms ease;
-  transition: -webkit-transform 500ms ease;
-  transition: transform 500ms ease;
-  transition: transform 500ms ease, -webkit-transform 500ms ease;
+  -webkit-transition: -webkit-transform 300ms ease;
+  transition: -webkit-transform 300ms ease;
+  transition: transform 300ms ease;
+  transition: transform 300ms ease, -webkit-transform 300ms ease;
 }
 
 .gameover__submit__name {
@@ -610,10 +649,6 @@ button:hover {
 }
 
 .gameover__submit.hidden {
-  display: none;
-}
-
-.highscore.hidden {
   display: none;
 }
 
@@ -632,6 +667,10 @@ button:hover {
       -ms-flex-pack: center;
           justify-content: center;
   row-gap: 10px;
+}
+
+.highscore.hidden {
+  display: none;
 }
 
 #final-score-display,
@@ -655,10 +694,10 @@ button:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-transition: -webkit-transform 500ms ease;
-  transition: -webkit-transform 500ms ease;
-  transition: transform 500ms ease;
-  transition: transform 500ms ease, -webkit-transform 500ms ease;
+  -webkit-transition: -webkit-transform 300ms ease;
+  transition: -webkit-transform 300ms ease;
+  transition: transform 300ms ease;
+  transition: transform 300ms ease, -webkit-transform 300ms ease;
 }
 
 #final-score-display {
@@ -673,10 +712,6 @@ button:hover {
 #user-place:hover {
   -webkit-transform: scale(1.5) translateY(10px);
           transform: scale(1.5) translateY(10px);
-  -webkit-transition: -webkit-transform 500ms ease;
-  transition: -webkit-transform 500ms ease;
-  transition: transform 500ms ease;
-  transition: transform 500ms ease, -webkit-transform 500ms ease;
 }
 
 #play-again {
