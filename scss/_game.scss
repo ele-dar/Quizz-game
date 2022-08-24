@@ -69,7 +69,6 @@
 }
 
 .choose-multiple > button:hover {
-	font-weight: 600;
 	animation: none;
 	transform: scale(1.1);
 	transition: transform $hover-duration ease, font-weight $hover-duration ease;

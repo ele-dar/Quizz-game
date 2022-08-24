@@ -452,7 +452,6 @@ button:hover {
 }
 
 .choose-multiple > button:hover {
-  font-weight: 600;
   -webkit-animation: none;
           animation: none;
   -webkit-transform: scale(1.1);
@@ -587,6 +586,25 @@ button:hover {
           align-items: center;
 }
 
+@media (max-width: 720px) {
+  .gameover__info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    row-gap: 10px;
+  }
+}
+
 .gameover__score {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -635,12 +653,6 @@ button:hover {
 .gameover__submit__btn:hover {
   -webkit-animation: none;
           animation: none;
-  -webkit-transform: scale(1.5) translateY(10px);
-          transform: scale(1.5) translateY(10px);
-  -webkit-transition: -webkit-transform 300ms ease;
-  transition: -webkit-transform 300ms ease;
-  transition: transform 300ms ease;
-  transition: transform 300ms ease, -webkit-transform 300ms ease;
 }
 
 .gameover__submit__name {
@@ -706,12 +718,6 @@ button:hover {
 
 #user-place {
   background-color: #ffe0de;
-}
-
-#final-score-display:hover,
-#user-place:hover {
-  -webkit-transform: scale(1.5) translateY(10px);
-          transform: scale(1.5) translateY(10px);
 }
 
 #play-again {

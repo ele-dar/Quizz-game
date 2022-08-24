@@ -5,6 +5,10 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		@include responsive-sm() {
+			@include center-col();
+			row-gap: 10px;
+		}
 	}
 	&__score {
 		@include center-col();
@@ -22,8 +26,6 @@
 		}
 		&__btn:hover {
 			animation: none;
-			transform: scale(1.5) translateY(10px);
-			transition: transform $hover-duration ease;
 		}
 		&__name {
 			font-family: inherit;
@@ -61,11 +63,6 @@
 
 #user-place {
 	background-color: $my-red;
-}
-
-#final-score-display:hover,
-#user-place:hover {
-	transform: scale(1.5) translateY(10px);
 }
 
 #play-again {

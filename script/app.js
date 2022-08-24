@@ -216,6 +216,7 @@ const findPlace = (highscores, user) => {
 	const sortedHighscores = highscores.sort((a, b) => {
 		return b.score - a.score;
 	});
+	console.log(`Highscores:`);
 	console.log(sortedHighscores);
 	const userPlaceValue = sortedHighscores.indexOf(user) + 1;
 	userPlace.innerText = userPlaceValue;
